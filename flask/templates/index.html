@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Text Classification Web App</title>
+  <style>
+    body {
+      background-image: url('/static/back.jpg');
+    }
+    h3{
+      text-align: center;
+      font-weight: bold;
+      font-size: 30px;
+    }
+    h1 {
+      color: #8F2828;
+      align-items: center;
+      text-align: center;
+      font-weight: bolder;
+      font-size: 49px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 30px;
+      font-style: italic;
+      font-weight: bold;
+    }
+    p {
+      text-align: center;
+      padding: 5px;
+      border: 2px solid black;
+      width: 10%;
+      margin: 0 auto;
+      margin-top: 20px;
+      font-size: 20px;
+      background-color: #FFF9F9;
+    }
+    form {
+      text-align: center;
+    }
+    textarea {
+      width: 60%; 
+      height: 250px;
+      padding: 10px;
+      margin: 10px auto; 
+    }
+    .button{
+      background-color: beige;
+      font-weight: bold;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Classification Web App</h1>
+  <h2>"Simplify Your Reading: Predicting and Categorizing Articles Just for You."</h2>
+  <form method="post" action="/predict">
+    <p>Enter Your Article </p>
+    <textarea id="article" name="article" rows="5" cols="50" required></textarea><br>
+    <input class= button type="submit" value="PREDICT">
+  </form>
+
+  {% if prediction %}
+    <p>Prediction:</p>
+    <h3>{{ prediction }}</h3>
+  {% endif %}
+  
+</body>
+</html>
